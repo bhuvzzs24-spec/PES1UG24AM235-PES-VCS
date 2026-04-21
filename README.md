@@ -1,4 +1,4 @@
-# Building PES-VCS — A Version Control System from Scratch
+<img width="612" height="117" alt="Screenshot 2026-04-21 at 11 53 28" src="https://github.com/user-attachments/assets/ea6a956a-4c2a-4d98-ab79-dab304e99bf3" /># Building PES-VCS — A Version Control System from Scratch
 
 **Objective:** Build a local version control system that tracks file changes, stores snapshots efficiently, and supports commit history. Every component maps directly to operating system and filesystem concepts.
 
@@ -13,18 +13,6 @@
 ```bash
 sudo apt update && sudo apt install -y gcc build-essential libssl-dev
 ```
-
-### Using This Repository
-
-This is a **template repository**. Do **not** fork it.
-
-1. Click **"Use this template"** → **"Create a new repository"** on GitHub
-2. Name your repository (e.g., `SRN-pes-vcs`) and set it to **public**. Replace `SRN` with your actual SRN, e.g., `PESXUG24CSYYY-pes-vcs`
-3. Clone this repository to your local machine and do all your lab work inside this directory.
-4.  **Important:** Remember to commit frequently as you progress. You are required to have a minimum of 5 detailed commits per phase. Refer to [Submission Requirements](#submission-requirements) for more details.
-5. Clone your new repository and start working
-
-The repository contains skeleton source files with `// TODO` markers where you need to write code. Functions marked `// PROVIDED` are complete — do not modify them.
 
 ### Building
 
@@ -375,10 +363,11 @@ The test program verifies:
 - Integrity checking (detects corrupted objects)
 
 **📸 Screenshot 1A:** Output of `./test_objects` showing all tests passing.
+<img width="616" height="122" alt="Screenshot 2026-04-21 at 11 54 10" src="https://github.com/user-attachments/assets/cfe6c6c8-9529-4422-b3fa-9c7427702a57" />
 
 **📸 Screenshot 1B:** `find .pes/objects -type f` showing the sharded directory structure.
+<img width="620" height="93" alt="Screenshot 2026-04-21 at 11 53 10" src="https://github.com/user-attachments/assets/c06ede9a-da23-4b5b-8809-18ade994141b" />
 
----
 
 ## Phase 2: Tree Objects
 
@@ -408,9 +397,15 @@ The test program verifies:
 
 **📸 Screenshot 2A:** Output of `./test_tree` showing all tests passing.
 
+<img width="875" height="139" alt="Screenshot 2026-04-21 at 11 54 34" src="https://github.com/user-attachments/assets/6b57743e-eb00-46b8-bbcd-d9d2758121c1" />
+
+
 **📸 Screenshot 2B:** Pick a tree object from `find .pes/objects -type f` and run `xxd .pes/objects/XX/YYY... | head -20` to show the raw binary format.
 
 ---
+
+<img width="877" height="99" alt="Screenshot 2026-04-21 at 11 54 52" src="https://github.com/user-attachments/assets/75e6b1c6-1e3c-4568-9f14-1678f7e14416" />
+
 
 ## Phase 3: The Index (Staging Area)
 
@@ -466,9 +461,14 @@ cat .pes/index    # Human-readable text format
 
 **📸 Screenshot 3A:** Run `./pes init`, `./pes add file1.txt file2.txt`, `./pes status` — show the output.
 
-**📸 Screenshot 3B:** `cat .pes/index` showing the text-format index with your entries.
+<img width="829" height="95" alt="Screenshot 2026-04-21 at 11 55 25" src="https://github.com/user-attachments/assets/ab317c0d-32a9-4739-b4d1-ae7647405fdb" />
 
----
+
+**📸 Screenshot 3B:** `cat .pes/index` showing the text-format index with your entries.
+<img width="860" height="64" alt="Screenshot 2026-04-21 at 11 55 42" src="https://github.com/user-attachments/assets/5a5c6b29-696e-4dbf-8d99-f34101a5177f" />
+
+
+
 
 ## Phase 4: Commits and History
 
@@ -517,11 +517,32 @@ make test-integration
 
 **📸 Screenshot 4A:** Output of `./pes log` showing three commits with hashes, authors, timestamps, and messages.
 
+<img width="840" height="376" alt="Screenshot 2026-04-21 at 11 56 07" src="https://github.com/user-attachments/assets/91354584-1ff7-4387-92dc-f1f41d85d289" />
+
+
+
+
+
+
 **📸 Screenshot 4B:** `find .pes -type f | sort` showing object store growth after three commits.
+<img width="802" height="271" alt="Screenshot 2026-04-21 at 11 56 19" src="https://github.com/user-attachments/assets/92914035-374c-4418-a6d5-cc9b9a785ad4" />
+
+
+
+
+
 
 **📸 Screenshot 4C:** `cat .pes/refs/heads/main` and `cat .pes/HEAD` showing the reference chain.
 
----
+<img width="868" height="104" alt="Screenshot 2026-04-21 at 11 56 37" src="https://github.com/user-attachments/assets/8c006634-cc53-4ad8-9125-8f68fe91f323" />
+
+
+
+
+**📸 Final output
+<img width="495" height="597" alt="Screenshot 2026-04-21 at 11 59 11" src="https://github.com/user-attachments/assets/901517eb-fa98-4148-abe3-4ce9800f7eb9" />
+
+
 
 ## Phase 5 & 6: Analysis-Only Questions
 
